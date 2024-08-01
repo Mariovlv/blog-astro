@@ -1,0 +1,119 @@
+<nav>
+  <h1 class="epilogue">tarjetay<span>+</span></h1>
+  <ul>
+    <li><a href="/articles">Artículos</a></li>
+    <li><a href="/contact">Contacto</a></li>
+    <li><a href="/courses">Cursos</a></li>
+    <li><a href="/cursos-gratis" class="button">Cursos gratis</a></li>
+  </ul>
+  <img class="burger-menu" src="./burger.svg" alt="menu burger" />
+</nav>
+
+<style>
+  :root {
+    --primary-color: #4caf50;
+    --nav-height: 60px;
+  }
+
+  body {
+    margin: 0;
+    padding: 0;
+  }
+
+  nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: white;
+    padding: 0 2rem;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    height: var(--nav-height);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+
+  ul {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  li {
+    padding: 0 0.5rem;
+  }
+
+  a {
+    text-decoration: none;
+    color: black;
+    font-weight: 500;
+    transition: color 0.3s ease;
+  }
+
+  span {
+    color: var(--primary-color);
+    border-bottom: 2px solid var(--primary-color);
+    padding-bottom: 2px;
+  }
+
+  .button {
+    background-color: var(--primary-color);
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    border: none;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+  }
+
+  .burger-menu {
+    display: none;
+    width: 3rem;
+    height: 3rem;
+    cursor: pointer;
+  }
+
+  @media (max-width: 1000px) {
+    .burger-menu {
+      display: block;
+    }
+
+    ul {
+      display: none;
+      position: absolute;
+      top: var(--nav-height);
+      left: 0;
+      right: 0;
+      background-color: white;
+      z-index: 1001;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+      padding: 1rem;
+      flex-direction: column;
+    }
+
+    ul.open {
+      display: flex;
+    }
+
+    li {
+      padding: 0.5rem 0;
+    }
+  }
+</style>
+
+<script>
+  const menuToggle = document.querySelector(".burger-menu");
+  const menuList = document.querySelector("nav ul");
+
+  menuToggle.addEventListener("click", () => {
+    menuList.classList.toggle("open");
+  });
+
+  document.addEventListener("click", (event) => {
+    const target = event.target as Node;
+    if (target && !menuList.contains(target) && !menuToggle.contains(target)) {
+      menuList.classList.remove("open");
+    }
+  });
+</script>
