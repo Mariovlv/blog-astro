@@ -7,9 +7,211 @@ import FormattedDate from "../component/FormattedDate.astro";
 const { title, description, pubDate, updatedDate } = Astro.props;
 ---
 
-<html>
+<html lang="en">
   <head>
     <BaseHead title={title} description={description} />
+    <style>
+      :root {
+        --color-text: #333;
+        --color-bg: #fff;
+        --color-accent: #4caf50;
+        --color-link: #0366d6;
+        --color-link-hover: #1a97f0;
+        --font-sans: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI",
+          Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue",
+          sans-serif;
+        --font-title: "Epilogue", var(--font-sans);
+        --font-body: var(--font-sans);
+        --font-mono: "Roboto Mono", SFMono-Regular, Consolas, "Liberation Mono",
+          Menlo, monospace;
+      }
+
+      body {
+        font-family: var(--font-body);
+        color: var(--color-text);
+        background-color: var(--color-bg);
+        line-height: 1.6;
+      }
+
+      main {
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 2rem 1rem;
+      }
+
+      article {
+        max-width: 720px;
+        margin: 0 auto;
+      }
+
+      .prose {
+        font-size: 1.125rem;
+      }
+
+      .title {
+        font-family: var(--font-title);
+        margin-bottom: 2rem;
+      }
+
+      .title h1 {
+        font-size: 2.5rem;
+        margin: 0.5rem 0;
+        line-height: 1.2;
+      }
+
+      .date {
+        font-family: var(--font-mono);
+        font-size: 0.875rem;
+        color: #666;
+      }
+
+      .last-updated-on {
+        font-style: italic;
+      }
+
+      hr {
+        border: 0;
+        border-top: 1px solid #eaecef;
+        margin: 2rem 0;
+      }
+
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6 {
+        font-family: var(--font-sans);
+        margin-top: 2.5rem;
+        margin-bottom: 1rem;
+        line-height: 1.3;
+      }
+
+      h1 {
+        font-size: 2.25rem;
+      }
+      h2 {
+        font-size: 1.875rem;
+        border-bottom: 1px solid #eaecef;
+        padding-bottom: 0.5rem;
+      }
+      h3 {
+        font-size: 1.5rem;
+      }
+      h4 {
+        font-size: 1.25rem;
+      }
+      h5 {
+        font-size: 1.125rem;
+      }
+      h6 {
+        font-size: 1rem;
+      }
+
+      p,
+      ul,
+      ol {
+        margin-bottom: 1.5rem;
+      }
+
+      ul,
+      ol {
+        padding-left: 1.5rem;
+      }
+
+      li {
+        margin-bottom: 0.5rem;
+      }
+
+      a:hover {
+        color: var(--color-link-hover);
+        text-decoration: underline;
+      }
+
+      img {
+        max-width: 100%;
+        height: auto;
+        display: block;
+        margin: 2rem auto;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      }
+
+      blockquote {
+        margin: 1.5rem 0;
+        padding: 0.5rem 1rem;
+        border-left: 4px solid var(--color-accent);
+        background-color: #f8f8f8;
+        font-style: italic;
+      }
+
+      pre {
+        background-color: #f6f8fa;
+        border-radius: 6px;
+        padding: 1rem;
+        overflow-x: auto;
+        font-family: var(--font-mono);
+        font-size: 0.875rem;
+      }
+
+      code {
+        font-family: var(--font-mono);
+        font-size: 0.875em;
+        background-color: rgba(27, 31, 35, 0.05);
+        padding: 0.2em 0.4em;
+        border-radius: 3px;
+      }
+
+      table {
+        width: 100%;
+        margin-bottom: 1.5rem;
+        border-collapse: collapse;
+      }
+
+      th,
+      td {
+        border: 1px solid #dfe2e5;
+        padding: 0.5rem 0.75rem;
+      }
+
+      th {
+        background-color: #f6f8fa;
+        font-weight: 600;
+      }
+
+      @media (max-width: 768px) {
+        main {
+          padding: 1rem 0.5rem;
+        }
+
+        .prose {
+          font-size: 1rem;
+        }
+
+        .title h1 {
+          font-size: 2rem;
+        }
+
+        h1 {
+          font-size: 1.875rem;
+        }
+        h2 {
+          font-size: 1.625rem;
+        }
+        h3 {
+          font-size: 1.375rem;
+        }
+        h4 {
+          font-size: 1.25rem;
+        }
+        h5 {
+          font-size: 1.125rem;
+        }
+        h6 {
+          font-size: 1rem;
+        }
+      }
+    </style>
   </head>
 
   <body>
@@ -35,5 +237,6 @@ const { title, description, pubDate, updatedDate } = Astro.props;
         </div>
       </article>
     </main>
-  </body><Footer />
+    <Footer />
+  </body>
 </html>

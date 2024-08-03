@@ -1,7 +1,18 @@
 ---
-import BaseHead from "../../component/BaseHead.astro";
 import Navbar from "../../component/Navbar.astro";
+import BaseHead from "../../component/BaseHead.astro";
+import BlogPreview from "../../component/BlogPreview.astro";
 import { SITE_TITLE, SITE_DESCRIPTION } from "../../consts";
+import { getCollection } from "astro:content";
+
+// Fetch all blog posts using getCollection
+const posts = await getCollection("blog");
+
+// Sort posts by publication date (newest first)
+posts.sort(
+  (a, b) =>
+    new Date(b.data.pubDate).getTime() - new Date(a.data.pubDate).getTime()
+);
 ---
 
 <!doctype html>
@@ -13,10 +24,45 @@ import { SITE_TITLE, SITE_DESCRIPTION } from "../../consts";
     <Navbar />
     <main>
       <section>
+        <h1 class="epilogue">Blog Posts</h1>
         <ul>
-          <li>Hola</li>
+          {
+            posts.map((post) => (
+              <li class="inter">
+                <BlogPreview
+                  post={{
+                    slug: post.slug,
+                    frontmatter: {
+                      title: post.data.title,
+                      description: post.data.description,
+                      image: post.data.image,
+                      pubDate: post.data.pubDate.toISOString().split("T")[0],
+                    },
+                  }}
+                />
+              </li>
+            ))
+          }
         </ul>
       </section>
     </main>
   </body>
 </html>
+
+<style>
+  main {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 2rem;
+  }
+
+  h1 {
+    margin-bottom: 2rem;
+    font-size: 2rem;
+  }
+
+  ul {
+    list-style-type: none;
+    padding: 0;
+  }
+</style>
