@@ -1,0 +1,20 @@
+---
+interface Props {
+  date: number; // Expect a timestamp (number)
+}
+
+const { date } = Astro.props;
+
+// Convert the timestamp to a Date object
+const formattedDate = new Date(date);
+---
+
+<time datetime={formattedDate.toISOString()}>
+  {
+    formattedDate.toLocaleDateString("en-us", {
+      year: "numeric",
+      month: "short",
+      day: "numeric",
+    })
+  }
+</time>

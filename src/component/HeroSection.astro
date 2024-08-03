@@ -2,22 +2,24 @@
 const { title, listItems, imageSrc, imageAlt, ctaText, ctaLink } = Astro.props;
 ---
 
-<div class="hero-text">
-  <h1>{title}</h1>
-  <ul class="animated-list">
-    {
-      listItems.map((item) => (
-        <li>
-          <span class="checkmark">✓</span> {item}
-        </li>
-      ))
-    }
-  </ul>
-  <a href={ctaLink} class="cta-button">{ctaText}</a>
-</div>
+<div class="container">
+  <div class="hero-text">
+    <h1>{title}</h1>
+    <ul class="animated-list">
+      {
+        listItems.map((item) => (
+          <li>
+            <span class="checkmark">✓</span> {item}
+          </li>
+        ))
+      }
+    </ul>
+    <a href="/blog" class="cta-button">{ctaText}</a>
+  </div>
 
-<div class="image-container">
-  <img src={imageSrc} alt={imageAlt} loading="lazy" />
+  <div class="image-container">
+    <img src={imageSrc} alt={imageAlt} loading="lazy" />
+  </div>
 </div>
 
 <script>
@@ -44,106 +46,8 @@ const { title, listItems, imageSrc, imageAlt, ctaText, ctaLink } = Astro.props;
     { threshold: 0.5 }
   );
 
-  observer.observe(document.querySelector(".animated-list"));
+  const animatedList = document.querySelector(".animated-list");
+  if (animatedList) {
+    observer.observe(animatedList);
+  }
 </script>
-
-<style>
-  /* Hero Section Styles */
-  .hero-text {
-    grid-column: span 5; /* Adjusted for better responsiveness */
-    display: flex;
-    flex-direction: column; /* Stack elements vertically */
-    align-items: flex-start; /* Align items to the left */
-    text-align: left;
-  }
-
-  .hero-text h1 {
-    font-size: 2.5rem;
-    color: #4caf50;
-    margin-bottom: 1rem;
-  }
-
-  .animated-list {
-    margin-bottom: 1.5rem;
-  }
-
-  .animated-list li {
-    opacity: 0;
-    transform: translateY(10px);
-    transition:
-      opacity 0.5s ease,
-      transform 0.5s ease;
-    margin-bottom: 0.5rem;
-  }
-
-  .animated-list li.show {
-    opacity: 1;
-    transform: translateY(0);
-  }
-
-  .checkmark {
-    color: #4caf50;
-    margin-right: 0.5rem;
-  }
-
-  .cta-button {
-    display: inline-block;
-    background-color: #4caf50;
-    color: white;
-    padding: 0.75rem 1.5rem;
-    text-decoration: none;
-    border-radius: 5px;
-    font-weight: bold;
-    transition: background-color 0.3s ease;
-  }
-
-  .cta-button:hover {
-    background-color: #45a049;
-  }
-
-  /* Image Container Styles */
-  .image-container {
-    grid-column: span 7; /* Adjusted for better responsiveness */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-
-  .image-container img {
-    max-width: 100%;
-    height: auto;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  }
-
-  .hero-text {
-    text-align: left;
-  }
-
-  .hero-text h1 {
-    font-size: 2.5rem;
-    color: #4caf50;
-    margin-bottom: 1rem;
-  }
-
-  .hero-text p {
-    font-size: 1.1rem;
-    color: #333;
-    margin-bottom: 1.5rem;
-    line-height: 1.6;
-  }
-
-  .image-container {
-    grid-column: span 7;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-
-  .image-container img {
-    max-width: 100%;
-    height: auto;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  }
-</style>

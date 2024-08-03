@@ -1,7 +1,7 @@
 ---
 title: "Como empezar tu historial crediticio"
 description: "Descubre cómo empezar a construir tu historial crediticio en México con nuestra guía sencilla y práctica. Compara tarjetas recomendadas, aprende a usar tu crédito responsablemente y da el primer paso hacia una vida financiera saludable."
-pubDate: 2024-08-301
+pubDate: "Aug 02 2024"
 image: "01minified.jpg"
 slug: "empezar-historial"
 ---
@@ -46,7 +46,7 @@ Construir y mantener un buen historial crediticio es esencial para asegurar tu e
 
 ### Tarjetas de Crédito Garantizadas
 
-Las tarjetas de crédito garantizadas son una excelente opción para aquellos que recién comienzan a construir su historial crediticio. Funcionan de manera similar a las tarjetas de crédito tradicionales, pero requieren un depósito de seguridad que actúa como garantía. Este depósito suele ser igual al límite de crédito de la tarjeta. Los beneficios de estas tarjetas incluyen la facilidad de aprobación y la oportunidad de demostrar responsabilidad crediticia. Una de las tarjetas garantizadas mas populares ahora mismo es la [Stori Card]{https://www.storicard.com/}. Una tarjeta con 99% de aprobacion, sin anualidad y hasta $20,000 pesos mexicanos de credito, puedes obtenerla con nuestro link de referidos haciendo click [aqui]{ https://www.storicard.com/r/mario_vym6}
+Las tarjetas de crédito garantizadas son una excelente opción para aquellos que recién comienzan a construir su historial crediticio. Funcionan de manera similar a las tarjetas de crédito tradicionales, pero requieren un depósito de seguridad que actúa como garantía. Este depósito suele ser igual al límite de crédito de la tarjeta. Los beneficios de estas tarjetas incluyen la facilidad de aprobación y la oportunidad de demostrar responsabilidad crediticia. Una de las tarjetas garantizadas mas populares ahora mismo es la [Stori Card](https://www.storicard.com/). Una tarjeta con 99% de aprobacion, sin anualidad y hasta $20,000 pesos mexicanos de credito, puedes obtenerla con nuestro link de referidos haciendo click [aqui](https://www.storicard.com/r/mario_vym6)
 
 ### Tarjetas de Crédito Departamentales
 

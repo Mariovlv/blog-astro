@@ -1,7 +1,22 @@
 ---
-import Layout from "../../layout/Layout.astro";
+import BaseHead from "../../component/BaseHead.astro";
+import Navbar from "../../component/Navbar.astro";
+import { SITE_TITLE, SITE_DESCRIPTION } from "../../consts";
 ---
 
-<Layout>
-  <h1>Blog page</h1>
-</Layout>
+<!doctype html>
+<html lang="es">
+  <head>
+    <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+  </head>
+  <body>
+    <Navbar />
+    <main>
+      <section>
+        <ul>
+          <li>Hola</li>
+        </ul>
+      </section>
+    </main>
+  </body>
+</html>
