@@ -1,0 +1,1 @@
+const t=document.querySelector(".burger-menu"),e=document.querySelector("#menuList");t&&e&&(t.addEventListener("click",()=>{e.classList.toggle("open")}),document.addEventListener("click",c=>{const n=c.target;e instanceof HTMLElement&&t instanceof HTMLElement&&!e.contains(n)&&!t.contains(n)&&e.classList.remove("open")}));

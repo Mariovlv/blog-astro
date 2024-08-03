@@ -1,0 +1,1 @@
+import"./hoisted.D9Hx33uP.js";const n=document.querySelectorAll(".animated-list li");function o(){let e=.2;n.forEach(i=>{setTimeout(()=>{i.classList.add("show")},e*1e3),e+=.2})}const s=new IntersectionObserver(e=>{e[0].isIntersecting&&(o(),s.disconnect())},{threshold:.5}),t=document.querySelector(".animated-list");t&&s.observe(t);
