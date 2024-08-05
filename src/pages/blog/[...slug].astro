@@ -18,6 +18,16 @@ const post = Astro.props;
 const { Content } = await post.render();
 ---
 
+<style>
+  .markdown-content h1 {
+    font-size: 2.5em;
+    margin-bottom: 1em;
+    color: #4caf50;
+  }
+</style>
+
 <BlogPost {...post.data}>
-  <Content />
+  <div class="markdown-content">
+    <Content />
+  </div>
 </BlogPost>

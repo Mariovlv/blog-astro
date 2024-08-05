@@ -4,6 +4,7 @@ description: "Descubre cómo empezar a construir tu historial crediticio en Méx
 pubDate: "Aug 02 2024"
 image: "01minified.jpg"
 slug: "empezar-historial"
+updatedDate: "Aug 05 2024"
 ---
 
 # Cómo empezar tu Historial Crediticio con tarjetas de crédito

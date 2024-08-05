@@ -29,7 +29,7 @@ const { post } = Astro.props;
       <h3>{post.frontmatter.title}</h3>
       <p>{post.frontmatter.description}</p>
     </div>
-    <span class="pub-date roboto-mono">{post.frontmatter.pubDate}</span>
+    <span class="pub-date">{post.frontmatter.pubDate}</span>
   </article>
 </a>
 
@@ -71,5 +71,12 @@ const { post } = Astro.props;
   .pub-date {
     font-size: 0.8rem;
     color: #666;
+    font-family: "Roboto Mono";
+  }
+  @media (max-width: 600px) {
+    article {
+      display: flex;
+      flex-direction: column;
+    }
   }
 </style>

@@ -13,7 +13,19 @@
 
 :root {
   --space: 1rem;
+  --color-text: #333;
+  --color-bg: #fff;
+  --color-accent: #4caf50;
+  --color-link: #0366d6;
+  --color-link-hover: #1a97f0;
+  --font-sans: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  --font-title: "Epilogue", var(--font-sans);
+  --font-body: var(--font-sans);
+  --font-mono: "Roboto Mono", SFMono-Regular, Consolas, "Liberation Mono", Menlo,
+    monospace;
 }
+
 h1 {
   font-size: 3.052em;
   font-family: "Epilogue", sans-serif;
@@ -28,9 +40,11 @@ h3 {
 }
 h4 {
   font-size: 1.563em;
+  font-family: "Inter";
 }
 h5 {
   font-size: 1.25em;
+  font-family: "Inter";
 }
 p {
   font-family: "Inter", sans-serif;
