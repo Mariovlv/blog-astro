@@ -1,0 +1,157 @@
+---
+import Navbar from "../../component/Navbar.astro";
+import BaseHead from "../../component/BaseHead.astro";
+import Footer from "../../component/Footer.astro";
+import { SITE_TITLE, SITE_DESCRIPTION } from "../../consts";
+---
+
+<!doctype html>
+<html lang="es">
+  <head>
+    <BaseHead
+      title={`${SITE_TITLE} | Contacto`}
+      description={SITE_DESCRIPTION}
+    />
+    <style>
+      main {
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 3rem 2rem;
+        line-height: 1.6;
+      }
+      .contact-section {
+        display: flex;
+        align-items: center;
+        margin-bottom: 1.5rem;
+      }
+      .contact-section svg {
+        width: 24px;
+        height: 24px;
+        margin-right: 1rem;
+      }
+      a {
+        color: #4caf50;
+        text-decoration: none;
+        transition: color 0.3s ease;
+        font-size: large;
+      }
+
+      .contact-form {
+        margin-top: 2rem;
+      }
+
+      .contact-form {
+        margin-top: 2.5rem;
+        border-top: 1px solid #eee; /* Add a divider before the form */
+        padding-top: 2rem;
+      }
+
+      .contact-form label {
+        display: block;
+        margin-bottom: 0.5rem;
+      }
+
+      .contact-form input,
+      .contact-form textarea {
+        width: 100%;
+        padding: 0.5rem;
+        margin-bottom: 1rem;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+      }
+      .contact-form button {
+        background-color: #4caf50;
+        color: white;
+        padding: 0.5rem 1rem;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+      }
+      .contact-form button:hover {
+        background-color: #45a049;
+      }
+
+      img {
+        color: #45a049;
+      }
+
+      ul {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      ul li {
+        padding: 1rem;
+        margin: 1rem;
+        border: 1px solid white;
+      }
+
+      ul li:hover {
+        background: whitesmoke;
+        transition: ease-in 0.5s;
+        cursor: pointer;
+        border: 1px whitesmoke solid;
+        border-radius: 10%;
+      }
+
+      li img {
+        padding: 0 1rem 0 1rem;
+      }
+    </style>
+  </head>
+  <body>
+    <Navbar />
+    <main>
+      <h1>Contacto</h1>
+      <p>
+        ¡Gracias por visitar mi blog! Me apasiona crear contenido sobre tarjetas
+        de crédito y finanzas personales. Con tarjetaymas, mi objetivo es educar
+        a muchas personas para que tomen las mejores decisiones financieras y
+        conozcan fuentes de información confiables relacionadas con el mundo
+        financiero en México.
+      </p>
+      <h2>Puedes encontrarme en:</h2>
+      <ul>
+        <li class="contact-section">
+          <img src="/public/x.png" alt="X logo" height="30" width="30" />
+          <a
+            href="https://x.com/trsvrsal"
+            target="_blank"
+            rel="noopener noreferrer">@trsvrsal</a
+          >
+        </li>
+        <li class="contact-section">
+          <img src="/public/gh.png" alt="gh logo" height="30" width="30" />
+          <a
+            href="https://github.com/Mariovlv"
+            target="_blank"
+            rel="noopener noreferrer">github.com/mariovlv</a
+          >
+        </li>
+      </ul>
+      <p>
+        No dudes en contactarme si tienes preguntas, sugerencias, o quieres
+        colaborar en algún proyecto. ¡Siempre estoy abierto a nuevas
+        oportunidades!
+      </p>
+
+      <div class="contact-form">
+        <h2>Envíame un mensaje</h2>
+        <form action="https://formspree.io/f/xwpebklv" method="POST">
+          <label for="name">Nombre:</label>
+          <input type="text" id="name" name="name" required />
+
+          <label for="email">Correo electrónico:</label>
+          <input type="email" id="email" name="email" required />
+
+          <label for="message">Mensaje:</label>
+          <textarea id="message" name="message" rows="4" required></textarea>
+
+          <button type="submit">Enviar mensaje</button>
+        </form>
+      </div>
+    </main>
+  </body><Footer />
+</html>
